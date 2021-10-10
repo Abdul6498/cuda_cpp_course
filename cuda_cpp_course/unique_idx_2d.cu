@@ -30,36 +30,36 @@ __global__ void unique_gid_calculation_2d_2d(int* input)
 		blockDim.x, gridDim.x, threadIdx.x, blockIdx.x, block_offset, row_offset, gid, input[gid]);
 }
 
-int main()
-{
-	int array_size = 16; //size of array
-	int array_byte_size = sizeof(int) * array_size; //size of array in bytes
-	int h_data[] = { 23,9,4,53,65,12,1,33, 14, 78,99,45,67,34,22, 11 };
-
-	for (int i = 0; i < array_size; i++)
-	{
-		printf("%d ", h_data[i]);
-	}
-	printf("\n \n");
-
-	int* d_data;
-	cudaMalloc((void**)&d_data, array_byte_size);
-	cudaMemcpy(d_data, h_data, array_byte_size, cudaMemcpyHostToDevice);
-
-	dim3 block(4);	//Numder of threads in x direction
-	dim3 grid(2,2);	//Number of blocks in each direction
-
-	//unique_gid_calculation_2d << <grid, block >> > (d_data);
-	//cudaDeviceSynchronize();
-
-	dim3 block_2d_2d(4);	//Numder of threads in x direction
-	dim3 grid_2d_2d(2, 2);	//Number of blocks in each direction
-	unique_gid_calculation_2d_2d << <grid_2d_2d, block_2d_2d >> > (d_data);
-	cudaDeviceSynchronize();
-
-	cudaDeviceReset();
-
-
-	printf("Finished");
-	return 0;
-}
+//int main()
+//{
+//	int array_size = 16; //size of array
+//	int array_byte_size = sizeof(int) * array_size; //size of array in bytes
+//	int h_data[] = { 23,9,4,53,65,12,1,33, 14, 78,99,45,67,34,22, 11 };
+//
+//	for (int i = 0; i < array_size; i++)
+//	{
+//		printf("%d ", h_data[i]);
+//	}
+//	printf("\n \n");
+//
+//	int* d_data;
+//	cudaMalloc((void**)&d_data, array_byte_size);
+//	cudaMemcpy(d_data, h_data, array_byte_size, cudaMemcpyHostToDevice);
+//
+//	dim3 block(4);	//Numder of threads in x direction
+//	dim3 grid(2,2);	//Number of blocks in each direction
+//
+//	//unique_gid_calculation_2d << <grid, block >> > (d_data);
+//	//cudaDeviceSynchronize();
+//
+//	dim3 block_2d_2d(4);	//Numder of threads in x direction
+//	dim3 grid_2d_2d(2, 2);	//Number of blocks in each direction
+//	unique_gid_calculation_2d_2d << <grid_2d_2d, block_2d_2d >> > (d_data);
+//	cudaDeviceSynchronize();
+//
+//	cudaDeviceReset();
+//
+//
+//	printf("Finished");
+//	return 0;
+//}
