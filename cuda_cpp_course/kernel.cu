@@ -6,9 +6,10 @@
 
 //16x16 thread divided into 4 different threads of 8x8 threads. THis behaves like a nested loop with 4 inner loops
 
-__global__ void print_threads() {
+__global__ void print_details() {
 
-    printf("threadIdx.x : %d, threadIdx.y : %d, threadidx.z : %d \n", threadIdx.x, threadIdx.y, threadIdx.z);
+    printf("threadIdx.x : %d, threadIdx.y : %d, threadidx.z : %d , blockDim.x : %d, blockDim.y : %d, gridDim.x : %d, gridDim.z : %d\n", 
+        threadIdx.x, threadIdx.y, threadIdx.z, blockDim.x, blockDim.y, gridDim.x, gridDim.y);
 }
 
 int main()
@@ -24,7 +25,7 @@ int main()
     dim3 grid(nx / block.x, ny / block.y);
 
     
-    print_threads << < grid, block >> > (); //(number of blocks in x,y,z direction , size of each block)
+    print_details << < grid, block >> > (); //(number of blocks in x,y,z direction , size of each block)
     
     return 0;
 }
