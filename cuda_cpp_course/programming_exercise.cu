@@ -2,6 +2,7 @@
 #include "device_launch_parameters.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 __global__ void print_details_3d() {
 
@@ -20,14 +21,17 @@ __global__ void print_details_3d() {
 
 int main()
 {
+	/* // code for print_details_3d kernel
 	int nx, ny, nz;
-	nx = 8; //16 threads in x direction 4 per block
-	ny = 8; //16 threads in y direction 4 per block
-	nz = 8; //16 threads in z direction 4 per block
+	nx = 8; //8 threads in x direction 4 per block
+	ny = 8; //8 threads in y direction 4 per block
+	nz = 8; //8 threads in z direction 4 per block
 
 	dim3 block(4,4,4); //size of block in x,y and z dimension
 	dim3 grid(nx / block.x, ny / block.y, nz / block.z);
 
 	print_details_3d << <grid, block>> > ();
+	cudaDeviceSynchronize();*/
+
 	return 0;
 }
