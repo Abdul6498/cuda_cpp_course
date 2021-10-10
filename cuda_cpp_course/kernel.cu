@@ -24,6 +24,7 @@ __global__ void unique_gid_calc_threadIdx(int* input)
 	int gid = tid + (blockIdx.x * blockDim.x);
 	printf("threadIdx.x: %d, blockIdx.x: %d , global Id : %d, value : %d \n",threadIdx.x, blockIdx.x, gid, input[gid]);
 }
+/*
 int main()
 {
 	int array_size = 8; //size of array
@@ -65,5 +66,6 @@ int main()
     print_details << < grid, block >> > (); //(number of blocks in x,y,z direction , size of each block)
 	cudaDeviceSynchronize();
     */
-    return 0;
+/*    return 0;
 }
+*/

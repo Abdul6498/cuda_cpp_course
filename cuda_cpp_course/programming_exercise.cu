@@ -18,10 +18,10 @@ __global__ void print_details_3d() {
 	
 
 }
-
+/*
 int main()
 {
-	/* // code for print_details_3d kernel
+	// code for print_details_3d kernel
 	int nx, ny, nz;
 	nx = 8; //8 threads in x direction 4 per block
 	ny = 8; //8 threads in y direction 4 per block
@@ -31,7 +31,8 @@ int main()
 	dim3 grid(nx / block.x, ny / block.y, nz / block.z);
 
 	print_details_3d << <grid, block>> > ();
-	cudaDeviceSynchronize();*/
+	cudaDeviceSynchronize();
 
 	return 0;
 }
+*/
