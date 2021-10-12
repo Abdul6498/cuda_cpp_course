@@ -80,6 +80,7 @@
     <CudaCompile Include="kernel.cu" />
     <CudaCompile Include="memory_transfer.cu" />
     <CudaCompile Include="programming_exercise.cu" />
+    <CudaCompile Include="Programming_exercise_2.cu" />
     <CudaCompile Include="unique_idx_2d.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
