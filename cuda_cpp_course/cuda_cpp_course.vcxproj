@@ -77,11 +77,18 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CudaCompile Include="Add_array.cu" />
     <CudaCompile Include="kernel.cu" />
     <CudaCompile Include="memory_transfer.cu" />
     <CudaCompile Include="programming_exercise.cu" />
     <CudaCompile Include="Programming_exercise_2.cu" />
     <CudaCompile Include="unique_idx_2d.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="compare.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="compare.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

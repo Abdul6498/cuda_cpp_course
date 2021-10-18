@@ -23,38 +23,38 @@ __global__ void mem_trs_3d(int * input, int size) {
 
 }
 
-int main() {
-
-	int array_size = 64;
-	int size_in_bytes = array_size * sizeof(int);
-	int* h_input;
-	int* d_input;
-
-	//assign a memory in the host
-	h_input = (int*)malloc(size_in_bytes);	//type casting
-
-	//generating a random number
-	time_t t;
-	srand((unsigned)time(&t));
-	for (int i = 0; i < array_size; i++) {
-			h_input[i] = (int)(rand() & 0xff);
-	}
-
-	cudaMalloc((void**)&d_input, size_in_bytes);
-
-	cudaMemcpy(d_input, h_input, size_in_bytes, cudaMemcpyHostToDevice);
-	int nx, ny, nz;
-	nx = 4;
-	ny = 4;
-	nz = 4;
-
-	dim3 block(2, 2, 2);
-	dim3 grid(nx / block.x, ny / block.y, nz / block.z);
-
-	mem_trs_3d << <grid, block >> > (d_input, array_size);
-	cudaDeviceSynchronize();
-	cudaDeviceReset();
-
-	printf("Finished");
-	return 0;
-}
+//int main() {
+//
+//	int array_size = 64;
+//	int size_in_bytes = array_size * sizeof(int);
+//	int* h_input;
+//	int* d_input;
+//
+//	//assign a memory in the host
+//	h_input = (int*)malloc(size_in_bytes);	//type casting
+//
+//	//generating a random number
+//	time_t t;
+//	srand((unsigned)time(&t));
+//	for (int i = 0; i < array_size; i++) {
+//			h_input[i] = (int)(rand() & 0xff);
+//	}
+//
+//	cudaMalloc((void**)&d_input, size_in_bytes);
+//
+//	cudaMemcpy(d_input, h_input, size_in_bytes, cudaMemcpyHostToDevice);
+//	int nx, ny, nz;
+//	nx = 4;
+//	ny = 4;
+//	nz = 4;
+//
+//	dim3 block(2, 2, 2);
+//	dim3 grid(nx / block.x, ny / block.y, nz / block.z);
+//
+//	mem_trs_3d << <grid, block >> > (d_input, array_size);
+//	cudaDeviceSynchronize();
+//	cudaDeviceReset();
+//
+//	printf("Finished");
+//	return 0;
+//}
