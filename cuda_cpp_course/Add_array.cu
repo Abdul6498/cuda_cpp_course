@@ -16,7 +16,7 @@ __global__ void add(int* a, int *b, int *c, int size) {
 	{
 		c[gid] = a[gid] + b[gid];
 	}
-	//printf("blockIdx.x: %d, blockDim.x: %d, threadIdx.x :%d, gid: %d, c: %d\n", blockIdx.x , blockDim.x , threadIdx.x,  gid, c[gid]);
+	printf("blockIdx.x: %d, blockDim.x: %d, threadIdx.x :%d, gid: %d, c: %d\n", blockIdx.x , blockDim.x , threadIdx.x,  gid, c[gid]);
 
 }
 
