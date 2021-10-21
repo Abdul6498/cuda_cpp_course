@@ -77,18 +77,37 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CudaCompile Include="7_sum_array.cu" />
     <CudaCompile Include="Add_array.cu" />
+    <CudaCompile Include="assignment_2.cu" />
+    <CudaCompile Include="cuda_common.cu" />
+    <CudaCompile Include="Dynamic_parallelism.cu" />
     <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="memory_model_1.cu" />
     <CudaCompile Include="memory_transfer.cu" />
+    <CudaCompile Include="pinned_mem_test.cu" />
     <CudaCompile Include="programming_exercise.cu" />
     <CudaCompile Include="Programming_exercise_2.cu" />
+    <CudaCompile Include="reduction_complete_unroll.cu" />
+    <CudaCompile Include="reduction_complete_unroll_template.cu" />
+    <CudaCompile Include="reduction_with_loop_unrolling.cu" />
+    <CudaCompile Include="Register_usage.cu" />
+    <CudaCompile Include="Synchronization_and_reduction.cu" />
     <CudaCompile Include="unique_idx_2d.cu" />
+    <CudaCompile Include="unrolling_warps_unroll.cu" />
+    <CudaCompile Include="warp_divergence.cu" />
+    <CudaCompile Include="warp_id_and_thread_id.cu" />
+    <CudaCompile Include="Zero_copy_memory.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="common.cpp" />
     <ClCompile Include="compare.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.h" />
     <ClInclude Include="compare.h" />
+    <ClInclude Include="cuda_common.cuh" />
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
